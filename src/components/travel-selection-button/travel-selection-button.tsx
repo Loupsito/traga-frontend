@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./travel-selection-button.css";
 import {EditableText} from "../editable-text/editable-text";
 import {Travel} from "../../model/travel";
+import {Link} from "react-router-dom";
 
 export function TravelSelectionButton(props: Travel) {
   const [count, setCount] = useState(0);
@@ -27,6 +28,12 @@ export function TravelSelectionButton(props: Travel) {
         <b>Creation date :</b> {creationDate.toString()}
       </p>
       <p>This travel has been clicked {count} times</p>
+
+      <div>
+        <Link to={`trips/${props.name}`}>Select this trip</Link>
+      </div>
+
+      <br />
 
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
