@@ -1,7 +1,7 @@
 import {useLoaderData} from "react-router-dom";
 
 export async function loadTripDetails({ params }: any) {
-  return params;
+  return fetch(`http://localhost:8080/api/trips/${params.id}`);
 }
 
 export function TripDetailsPage() {
