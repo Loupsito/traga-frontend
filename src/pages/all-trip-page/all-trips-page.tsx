@@ -1,6 +1,6 @@
 import React from "react";
 import { Trip } from "../../model/trip";
-import { TripSelectionButton } from "../../components/trip-selection-button/trip-selection-button";
+import { TripSelectionPanel } from "../../components/trip-selection-panel/trip-selection-panel";
 import { useLoaderData } from "react-router-dom";
 import "./all-trips-page.css";
 
@@ -11,7 +11,7 @@ export function AllTripsPage() {
     <div className="trips-container">
       {trips.map((data: Trip) => {
         return (
-          <TripSelectionButton
+          <TripSelectionPanel
             id={data.id}
             name={data.name}
             creationDate={data.creationDate}
