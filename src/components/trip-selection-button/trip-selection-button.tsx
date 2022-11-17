@@ -1,11 +1,10 @@
-import React, {useState} from "react";
-import "./travel-selection-button.css";
-import {EditableText} from "../editable-text/editable-text";
-import {Trip} from "../../model/trip";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import "./trip-selection-button.css";
+import { EditableText } from "../editable-text/editable-text";
+import { Trip } from "../../model/trip";
+import { MiddleSizeButton } from "../back-to-home-page-button/middle-size-button";
 
-export function TravelSelectionButton(props: Trip) {
-  const [count, setCount] = useState(0);
+export function TripSelectionButton(props: Trip) {
   const [title, setTitle] = useState(props.name);
 
   const [isInputDisplay, setIsInputDisplay] = useState(false);
@@ -13,7 +12,7 @@ export function TravelSelectionButton(props: Trip) {
   const creationDate = new Date(props.creationDate);
 
   return (
-    <div className="travel-selection-button">
+    <div className="trip-selection-button">
       <EditableText
         value={title}
         handleChange={(e: any) => setTitle(e.target.value)}
@@ -27,15 +26,7 @@ export function TravelSelectionButton(props: Trip) {
       <p>
         <b>Creation date :</b> {creationDate.toString()}
       </p>
-      <p>This travel has been clicked {count} times</p>
-
-      <div>
-        <Link to={`trips/${props.name}`}>Select this trip</Link>
-      </div>
-
-      <br />
-
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <MiddleSizeButton path={`trips/${props.id}`} text={"Select this trip"} />
     </div>
   );
 }

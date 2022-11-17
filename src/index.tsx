@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {AllTripsPage} from "./pages/all-trip-page/all-trips-page";
-import {getTrips} from "./api/travels/travel-api";
-import {loadTripDetails, TripDetailsPage,} from "./pages/trip-details-page/trip-details-page";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AllTripsPage } from "./pages/all-trip-page/all-trips-page";
+import { getTripDetails, getTrips } from "./api/trips/trips-api";
+import { TripDetailsPage } from "./pages/trip-details-page/trip-details-page";
 import ErrorPage from "./pages/error-page/error-page";
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/trips/:id",
     element: <TripDetailsPage />,
-    loader: loadTripDetails,
+    loader: getTripDetails,
     errorElement: <ErrorPage />,
   },
 ]);

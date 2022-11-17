@@ -1,0 +1,14 @@
+.button {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  padding: 6px 20px;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 13px arial, helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #555;
+}
