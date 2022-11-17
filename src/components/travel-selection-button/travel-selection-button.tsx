@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import "./travel-selection-button.css";
 import {EditableText} from "../editable-text/editable-text";
-import {Travel} from "../../model/travel";
+import {Trip} from "../../model/trip";
 import {Link} from "react-router-dom";
 
-export function TravelSelectionButton(props: Travel) {
+export function TravelSelectionButton(props: Trip) {
   const [count, setCount] = useState(0);
   const [title, setTitle] = useState(props.name);
 

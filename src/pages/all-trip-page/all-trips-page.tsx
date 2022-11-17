@@ -1,15 +1,15 @@
 import React from "react";
-import {Travel} from "../../model/travel";
+import {Trip} from "../../model/trip";
 import {TravelSelectionButton} from "../../components/travel-selection-button/travel-selection-button";
 import {useLoaderData} from "react-router-dom";
 import "./all-trips-page.css";
 
 export function AllTripsPage() {
-  const travels = useLoaderData() as Travel[];
+  const travels = useLoaderData() as Trip[];
 
   return (
     <div className="trips-container">
-      {travels.map((data: Travel) => {
+      {travels.map((data: Trip) => {
         return (
           <TravelSelectionButton
             name={data.name}

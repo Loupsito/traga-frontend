@@ -1,4 +1,4 @@
-export interface Travel {
+export interface Trip {
   name: string;
   creator: string;
   creationDate: Date;
