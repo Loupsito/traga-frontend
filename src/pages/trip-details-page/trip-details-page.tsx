@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import React from "react";
-import { MiddleSizeButton } from "../../components/back-to-home-page-button/middle-size-button";
+import { MiddleSizeButton } from "../../components/middle-size-button/middle-size-button";
 import { Trip } from "../../model/trip";
 import "./trip-details-page.css";
 

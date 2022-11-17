@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./trip-selection-button.css";
 import { EditableText } from "../editable-text/editable-text";
 import { Trip } from "../../model/trip";
-import { MiddleSizeButton } from "../back-to-home-page-button/middle-size-button";
+import { MiddleSizeButton } from "../middle-size-button/middle-size-button";
 
 export function TripSelectionButton(props: Trip) {
   const [title, setTitle] = useState(props.name);
