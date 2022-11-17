@@ -1,11 +1,14 @@
-import {Outlet} from "react-router-dom";
+import {useLoaderData} from "react-router-dom";
 
-export function TripDetailsPage(props: any) {
+export async function loadTripDetails({ params }: any) {
+  return params;
+}
 
-  return(
+export function TripDetailsPage() {
+  const trip: any = useLoaderData();
+  return (
     <div>
-      <Outlet />
-      <h1>Title : {props.tripId}</h1>
+      <h1>Title : {trip.id}</h1>
       Nyan cat
     </div>
   );

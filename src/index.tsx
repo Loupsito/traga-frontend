@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {AllTripsPage} from "./pages/all-trip-page/all-trips-page";
 import {getTrips} from "./api/travels/travel-api";
-import {TripDetailsPage} from "./pages/trip-details-page/trip-details-page";
+import {loadTripDetails, TripDetailsPage,} from "./pages/trip-details-page/trip-details-page";
 import ErrorPage from "./pages/error-page/error-page";
 
 const router = createBrowserRouter([
@@ -12,15 +12,14 @@ const router = createBrowserRouter([
     element: <AllTripsPage />,
     loader: getTrips,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "trips/:tripId",
-        element: <TripDetailsPage />,
-      },
-    ],
+  },
+  {
+    path: "/trips/:id",
+    element: <TripDetailsPage />,
+    loader: loadTripDetails,
+    errorElement: <ErrorPage />,
   },
 ]);
-
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
