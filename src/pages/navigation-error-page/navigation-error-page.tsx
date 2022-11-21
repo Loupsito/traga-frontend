@@ -13,14 +13,16 @@ export default function NavigationErrorPage() {
       <p>Sorry, an unexpected error has occurred.</p>
       <div className="table-wrapper-error">
         <table className="fl-table-error">
-          <tr>
-            <th>Status</th>
-            <th>Message</th>
-          </tr>
-          <tr>
-            <td>{error.status}</td>
-            <td>{error.data ? error.data : error.statusText}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Status</th>
+              <th>Message</th>
+            </tr>
+            <tr>
+              <td>{error.status}</td>
+              <td>{error.data ? error.data : error.statusText}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div id="button-wrapper">
