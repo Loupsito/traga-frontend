@@ -47,3 +47,7 @@
 .fl-table-error tr:nth-child(even) {
   background: #f8f8f8;
 }
+
+#button-wrapper {
+  text-align: center;
+}
