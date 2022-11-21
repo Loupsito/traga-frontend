@@ -1,9 +1,9 @@
-.table-wrapper {
+.table-wrapper-error {
   margin: 10px 70px 70px;
   box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
 }
 
-.fl-table {
+.fl-table-error {
   border-radius: 5px;
   font-size: 12px;
   font-weight: normal;
@@ -15,27 +15,35 @@
   background-color: white;
 }
 
-.fl-table td,
-.fl-table th {
+.fl-table-error td,
+.fl-table-error th {
   text-align: center;
   padding: 8px;
 }
+.fl-table-error td {
+  background-color: rgba(248, 168, 168, 0.37);
+}
 
-.fl-table td {
+.fl-table-error th {
+  color: white;
+  background-color: #a50000;
+}
+
+.fl-table-error td {
   border-right: 1px solid #f8f8f8;
   font-size: 12px;
 }
 
-.fl-table thead th {
+.fl-table-error thead th {
   color: #ffffff;
   background: #4fc3a1;
 }
 
-.fl-table thead th:nth-child(odd) {
+.fl-table-error thead th:nth-child(odd) {
   color: #ffffff;
   background: #324960;
 }
 
-.fl-table tr:nth-child(even) {
+.fl-table-error tr:nth-child(even) {
   background: #f8f8f8;
 }

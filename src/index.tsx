@@ -4,20 +4,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AllTripsPage } from "./pages/all-trips-page/all-trips-page";
 import { getTripDetails, getTrips } from "./api/trips/trips-api";
 import { TripDetailsPage } from "./pages/trip-details-page/trip-details-page";
-import ErrorPage from "./pages/error-page/error-page";
+import NavigationErrorPage from "./pages/navigation-error-page/navigation-error-page";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AllTripsPage />,
     loader: getTrips,
-    errorElement: <ErrorPage />,
+    errorElement: <NavigationErrorPage />,
   },
   {
     path: "/trips/:id",
     element: <TripDetailsPage />,
     loader: getTripDetails,
-    errorElement: <ErrorPage />,
+    errorElement: <NavigationErrorPage />,
   },
 ]);
 
