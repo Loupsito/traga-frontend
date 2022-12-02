@@ -12,7 +12,7 @@ export function TripSelectionPanel(props: Trip) {
   const creationDate = new Date(props.creationDate);
 
   return (
-    <div className="trip-selection-button">
+    <div className="trip-selection-panel">
       <EditableText
         value={title}
         handleChange={(e: any) => setTitle(e.target.value)}
