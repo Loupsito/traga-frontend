@@ -16,6 +16,7 @@ export function AllTripsPage() {
             name={data.name}
             creationDate={data.creationDate}
             creator={data.creator}
+            key={data.id}
           />
         );
       })}
