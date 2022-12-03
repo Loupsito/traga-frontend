@@ -1,10 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import {useLoaderData} from "react-router-dom";
 import React from "react";
-import { MiddleSizeButton } from "../../components/middle-size-button/middle-size-button";
-import { Trip } from "../../model/trip";
+import {MiddleSizeButton} from "../../components/middle-size-button/middle-size-button";
+import {Trip} from "../../model/trip";
 import "./trip-details-page.css";
-import { ButtonModalToModifyText } from "../../components/button-modal-to-modify-text/button-modal-to-modify-text";
-import { TextToModifyEnum } from "../../components/TextToModifyEnum";
+import {ButtonModalToModifyText} from "../../components/button-modal-to-modify-text/button-modal-to-modify-text";
+import {TextToModifyEnum} from "../../components/TextToModifyEnum";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;

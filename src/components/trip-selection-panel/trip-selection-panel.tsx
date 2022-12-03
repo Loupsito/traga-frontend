@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./trip-selection-panel.css";
-import { Trip } from "../../model/trip";
-import { MiddleSizeButton } from "../middle-size-button/middle-size-button";
+import {Trip} from "../../model/trip";
+import {MiddleSizeButton} from "../middle-size-button/middle-size-button";
 
 export function TripSelectionPanel(props: Trip) {
   const [title] = useState(props.name);
