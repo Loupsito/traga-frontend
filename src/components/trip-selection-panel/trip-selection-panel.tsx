@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import "./trip-selection-panel.css";
-import { EditableText } from "../editable-text/editable-text";
 import { Trip } from "../../model/trip";
 import { MiddleSizeButton } from "../middle-size-button/middle-size-button";
 
 export function TripSelectionPanel(props: Trip) {
-  const [title, setTitle] = useState(props.name);
-
-  const [isInputDisplay, setIsInputDisplay] = useState(false);
-
+  const [title] = useState(props.name);
   const creationDate = new Date(props.creationDate);
 
   return (
     <div className="trip-selection-panel">
-      <EditableText
-        value={title}
-        handleChange={(e: any) => setTitle(e.target.value)}
-        handleDoubleClick={() => setIsInputDisplay(true)}
-        handleBlur={() => setIsInputDisplay(false)}
-        isInputDisplay={isInputDisplay}
-      />
+      <h2>{title}</h2>
       <p>
         <b>Created by </b> {props.creator}
       </p>
