@@ -4,7 +4,7 @@ import {MiddleSizeButton} from "../../components/middle-size-button/middle-size-
 import {Trip} from "../../model/trip";
 import "./trip-details-page.css";
 import {ButtonModalToModifyText} from "../../components/button-modal-to-modify-text/button-modal-to-modify-text";
-import {TextToModifyEnum} from "../../components/TextToModifyEnum";
+import {TextToModifyEnum} from "../../components/button-modal-to-modify-text/text-to-modify.enum";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;
