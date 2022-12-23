@@ -12,6 +12,23 @@ export const getTrips = async () => {
   }
 };
 
+export const updateTrip = async ({ params }: any) => {
+  try {
+    const res = await axios.put(
+      `http://localhost:8080/api/trips?userId=foobar`,
+      {
+        idTrip: params.idTrip,
+        name: params.name,
+        creator: params.creator,
+      }
+    );
+    console.log(res);
+    return res.data;
+  } catch (error: any) {
+    throwError(error);
+  }
+};
+
 export async function getTripDetails({ params }: any) {
   try {
     const res = await axios.get(`http://localhost:8080/api/trips/${params.id}`);

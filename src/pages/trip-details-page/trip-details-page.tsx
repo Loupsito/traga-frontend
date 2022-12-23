@@ -1,23 +1,24 @@
-import {useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import React from "react";
-import {MiddleSizeButton} from "../../components/middle-size-button/middle-size-button";
-import {Trip} from "../../model/trip";
+import { MiddleSizeButton } from "../../components/middle-size-button/middle-size-button";
+import { Trip } from "../../model/trip";
 import "./trip-details-page.css";
-import {ButtonModalToModifyText} from "../../components/button-modal-to-modify-text/button-modal-to-modify-text";
-import {TextToModifyEnum} from "../../components/button-modal-to-modify-text/text-to-modify.enum";
+
+interface SaveTripDto {
+  name?: string;
+  title?: string;
+}
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;
+  const saveTrip = (saveTripDto: SaveTripDto): void => {
+    console.log("save : ", saveTripDto);
+  };
   return (
     <div>
       <MiddleSizeButton path="/" text={"Back to home"} />
-      <h1>
-        Title : {trip.name}{" "}
-        <ButtonModalToModifyText
-          type={TextToModifyEnum.Trip}
-          fieldToModify="name"
-          value="new name value"
-        />
+      <h1 contentEditable="true" onBlur={() => saveTrip({ name: trip.name })}>
+        {trip.name}
       </h1>
 
       <div className="table-wrapper">
@@ -28,13 +29,8 @@ export function TripDetailsPage() {
               <th>Creation date</th>
             </tr>
             <tr>
-              <td>
-                {trip.creator}{" "}
-                <ButtonModalToModifyText
-                  type={TextToModifyEnum.Trip}
-                  fieldToModify="creator"
-                  value="new creator value"
-                />
+              <td contentEditable="true" onBlur={() => saveTrip({ name: trip.creator })}>
+                {trip.creator}
               </td>
               <td>{trip.creationDate.toString()}</td>
             </tr>
