@@ -5,11 +5,7 @@ import { Trip } from "../../model/trip";
 import "./trip-details-page.css";
 import "../../components/buttons/general-themes-buttons.css";
 import { updateTrip } from "../../api/trips/trips-api";
-
-interface SaveTripDto {
-  name?: string;
-  title?: string;
-}
+import { SaveTripDto } from "../../api/trips/trips.dto";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;
@@ -18,7 +14,7 @@ export function TripDetailsPage() {
   const [isEditMode, setIsEditMode] = useState(false);
   const cssClass = isEditMode ? "styleEditModeOn" : "styleEditModeOff";
 
-  const saveTrip = async (saveTripRequest: { name?: string; creator?: string }): Promise<void> => {
+  const saveTrip = async (saveTripRequest: SaveTripDto): Promise<void> => {
     try {
       await updateTrip({
         idTrip: trip.id,
@@ -52,6 +48,7 @@ export function TripDetailsPage() {
       >
         {trip.name}
       </h1>
+
       <div className="table-wrapper">
         <table className="fl-table">
           <tbody>
