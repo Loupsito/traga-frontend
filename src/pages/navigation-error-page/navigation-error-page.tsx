@@ -1,7 +1,7 @@
-import {useRouteError} from "react-router-dom";
+import { useRouteError } from "react-router-dom";
 import React from "react";
 import "./navigation-error-page.css";
-import {MiddleSizeButton} from "../../components/middle-size-button/middle-size-button";
+import { MiddleSizeButtonRedirect } from "../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
 
 export default function NavigationErrorPage() {
   const error: any = useRouteError();
@@ -26,7 +26,7 @@ export default function NavigationErrorPage() {
         </table>
       </div>
       <div id="button-wrapper">
-        <MiddleSizeButton path="/" text={"Back to home"} />
+        <MiddleSizeButtonRedirect path="/" text={"Back to home"} />
       </div>
     </div>
   );

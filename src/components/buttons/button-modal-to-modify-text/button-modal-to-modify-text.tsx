@@ -14,7 +14,7 @@ export function ButtonModalToModifyText(props: any) {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    alert("inputTextValue = " + inputTextValue)
+    alert("inputTextValue = " + inputTextValue);
   };
 
   return (
@@ -31,7 +31,7 @@ export function ButtonModalToModifyText(props: any) {
               placeholder={"Your new " + props.fieldToModify + "..."}
               onChange={(e) => setInputTextValue(e.target.value)}
             />
-            <input type="submit" value="Validate"/>
+            <input type="submit" value="Validate" />
           </form>
           <button onClick={closeModal}>close</button>
         </span>

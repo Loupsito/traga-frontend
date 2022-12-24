@@ -1,7 +1,7 @@
 import React from "react";
-import {Trip} from "../../model/trip";
-import {TripSelectionPanel} from "../../components/trip-selection-panel/trip-selection-panel";
-import {useLoaderData} from "react-router-dom";
+import { Trip } from "../../model/trip";
+import { TripSelectionPanel } from "../../components/trip-selection-panel/trip-selection-panel";
+import { useLoaderData } from "react-router-dom";
 import "./all-trips-page.css";
 
 export function AllTripsPage() {

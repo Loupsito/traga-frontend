@@ -39,3 +39,11 @@
 .fl-table tr:nth-child(even) {
   background: #f8f8f8;
 }
+
+.styleEditModeOn {
+  background-color: #908787;
+}
+
+.styleEditModeOff {
+  background-color: initial;
+}

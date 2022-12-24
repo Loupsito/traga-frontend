@@ -2,9 +2,7 @@ import axios from "axios";
 
 export const getTrips = async () => {
   try {
-    const res = await axios.get(
-      `http://localhost:8080/api/trips?userId=foobar`
-    );
+    const res = await axios.get(`http://localhost:8080/api/trips?userId=foobar`);
     console.log(res);
     return res.data;
   } catch (error: any) {
@@ -12,17 +10,14 @@ export const getTrips = async () => {
   }
 };
 
-export const updateTrip = async ({ params }: any) => {
+export const updateTrip = async (params: { idTrip?: number; name?: string; creator?: string }) => {
   try {
-    const res = await axios.put(
-      `http://localhost:8080/api/trips?userId=foobar`,
-      {
-        idTrip: params.idTrip,
-        name: params.name,
-        creator: params.creator,
-      }
-    );
-    console.log(res);
+    const body = {
+      idTrip: params.idTrip,
+      name: params.name,
+      creator: params.creator,
+    };
+    const res = await axios.put(`http://localhost:8080/api/trips`, body);
     return res.data;
   } catch (error: any) {
     throwError(error);

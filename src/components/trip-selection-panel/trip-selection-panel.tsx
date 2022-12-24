@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./trip-selection-panel.css";
-import {Trip} from "../../model/trip";
-import {MiddleSizeButton} from "../middle-size-button/middle-size-button";
+import { Trip } from "../../model/trip";
+import { MiddleSizeButtonRedirect } from "../buttons/middle-size-button-redirect/middle-size-button-redirect";
 
 export function TripSelectionPanel(props: Trip) {
   const [title] = useState(props.name);
@@ -16,7 +16,7 @@ export function TripSelectionPanel(props: Trip) {
       <p>
         <b>Creation date :</b> {creationDate.toString()}
       </p>
-      <MiddleSizeButton path={`trips/${props.id}`} text={"Select this trip"} />
+      <MiddleSizeButtonRedirect path={`trips/${props.id}`} text={"Select this trip"} />
     </div>
   );
 }
