@@ -1,5 +1,18 @@
 import axios from "axios";
 
+export const createTrip = async (name: string, creator: string) => {
+  try {
+    const body = {
+      name: name,
+      creator: creator,
+    };
+    const res = await axios.post(`http://localhost:8080/api/trips`, body);
+    return res.data;
+  } catch (error: any) {
+    throwError(error);
+  }
+};
+
 export const getTrips = async () => {
   try {
     const res = await axios.get(`http://localhost:8080/api/trips?userId=foobar`);

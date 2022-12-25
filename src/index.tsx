@@ -6,7 +6,7 @@ import { getOneTrip, getTrips } from "./api/trips/trips-api";
 import { TripDetailsPage } from "./pages/trip-details-page/trip-details-page";
 import NavigationErrorPage from "./pages/navigation-error-page/navigation-error-page";
 import "./index.css";
-import { MiddleSizeButtonRedirect } from "./components/buttons/middle-size-button-redirect/middle-size-button-redirect";
+import { CreateTripPage } from "./pages/create-trip-page/create-trip-page";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/trips/new",
-    element: (
-      <div>
-        <h2>Page to create a new trip ! (Work in progress)</h2>
-        <MiddleSizeButtonRedirect path="/" text={"Back to home"} />
-      </div>
-    ),
+    element: <CreateTripPage />,
     errorElement: <NavigationErrorPage />,
   },
 ]);
