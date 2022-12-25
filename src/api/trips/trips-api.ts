@@ -24,7 +24,7 @@ export const updateTrip = async (params: { idTrip?: number; name?: string; creat
   }
 };
 
-export async function getTripDetails({ params }: any) {
+export async function getOneTrip({ params }: any) {
   try {
     const res = await axios.get(`http://localhost:8080/api/trips/${params.id}`);
     console.log(res);
