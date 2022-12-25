@@ -51,3 +51,6 @@
 .actionsOnTrip {
   text-align: center;
 }
+.actionsOnTrip button {
+  margin-right: 10px;
+}

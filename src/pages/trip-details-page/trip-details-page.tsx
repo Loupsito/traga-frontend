@@ -40,9 +40,6 @@ export function TripDetailsPage() {
   return (
     <div>
       <MiddleSizeButtonRedirect path="/" text={"Back to home"} />
-      <button className="button-middle-size" onClick={() => turnOffEditMode()}>
-        {isEditMode ? "Save changes" : "Activate edit mode"}
-      </button>
 
       <h1
         suppressContentEditableWarning={true}
@@ -75,6 +72,9 @@ export function TripDetailsPage() {
         </table>
       </div>
       <div className="actionsOnTrip">
+        <button className="button-middle-size" onClick={() => turnOffEditMode()}>
+          {isEditMode ? "Save changes" : "Activate edit mode"}
+        </button>
         <button className="button-middle-size dangerousButtonAction">Delete trip</button>
       </div>
     </div>
