@@ -1,20 +1,18 @@
 .tripsCreationForm {
-    border: 1px solid #324960;
-    width: 40rem;
-    padding: 5rem;
+  border: 1px solid #324960;
+  width: 40rem;
+  padding: 5rem;
 }
 
-.tripsCreationForm li{
-    list-style: none;
-    margin: 1rem;
+.tripsCreationForm li {
+  list-style: none;
+  margin: 1rem;
 }
 
 .trips-creation-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60vh;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  flex-wrap: wrap;
 }
-
-
