@@ -14,12 +14,17 @@ export function TripDetailsPage() {
   const [isEditMode, setIsEditMode] = useState(false);
   const cssClass = isEditMode ? "styleEditModeOn" : "styleEditModeOff";
 
-  const saveTrip = async (saveTripRequest: SaveTripDto): Promise<void> => {
+  const turnOffEditMode = async () => {
+    setIsEditMode(!isEditMode);
+    await saveTrip();
+  };
+
+  const saveTrip = async (): Promise<void> => {
     try {
       await updateTrip({
         idTrip: trip.id,
-        name: saveTripRequest.name,
-        creator: saveTripRequest.creator,
+        name: name !== trip.name ? name : undefined,
+        creator: creator !== trip.creator ? creator : undefined,
       });
     } catch (e) {
       console.error(e);
@@ -32,18 +37,18 @@ export function TripDetailsPage() {
   const handleCreatorChange = (e: any) => {
     setCreator(e.currentTarget.textContent);
   };
+
   return (
     <div>
       <MiddleSizeButtonRedirect path="/" text={"Back to home"} />
-      <button className="button-middle-size" onClick={() => setIsEditMode(!isEditMode)}>
-        {isEditMode ? "Deactivate Edit mode" : "Activate Edit mode"}
+      <button className="button-middle-size" onClick={() => turnOffEditMode()}>
+        {isEditMode ? "Save changes" : "Activate edit mode"}
       </button>
 
       <h1
         suppressContentEditableWarning={true}
         contentEditable={isEditMode}
         onInput={(e) => handleNameChange(e)}
-        onBlur={() => saveTrip({ name: name })}
         className={cssClass}
       >
         {trip.name}
@@ -61,7 +66,6 @@ export function TripDetailsPage() {
                 suppressContentEditableWarning={true}
                 contentEditable={isEditMode}
                 onInput={(e) => handleCreatorChange(e)}
-                onBlur={() => saveTrip({ creator: creator })}
                 className={cssClass}
               >
                 {trip.creator}
