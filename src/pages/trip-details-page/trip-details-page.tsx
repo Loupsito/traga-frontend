@@ -5,7 +5,6 @@ import { Trip } from "../../model/trip";
 import "./trip-details-page.css";
 import "../../components/buttons/general-themes-buttons.css";
 import { updateTrip } from "../../api/trips/trips-api";
-import { SaveTripDto } from "../../api/trips/trips.dto";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;

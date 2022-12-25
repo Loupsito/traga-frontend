@@ -1,4 +1,4 @@
 export interface SaveTripDto {
-    name?: string;
-    creator?: string;
+  name?: string;
+  creator?: string;
 }
