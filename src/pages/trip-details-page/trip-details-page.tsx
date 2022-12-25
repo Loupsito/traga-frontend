@@ -74,6 +74,9 @@ export function TripDetailsPage() {
           </tbody>
         </table>
       </div>
+      <div className="actionsOnTrip">
+        <button className="button-middle-size dangerousButtonAction">Delete trip</button>
+      </div>
     </div>
   );
 }

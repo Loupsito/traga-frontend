@@ -12,3 +12,14 @@
   white-space: nowrap;
   color: #555;
 }
+
+.dangerousButtonAction {
+  background-color: #b50101;
+  color: #ffffff;
+}
+.dangerousButtonAction:hover {
+  background-color: #920000;
+}
+.dangerousButtonAction:active {
+  background-color: #6a0000;
+}
