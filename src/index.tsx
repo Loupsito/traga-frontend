@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AllTripsPage } from "./pages/all-trips-page/all-trips-page";
+import { AllTripsPage } from "./pages/trip/all-trips-page/all-trips-page";
 import { getOneTripRequest, getTripsRequest } from "./api/trips/trips-api";
-import { TripDetailsPage } from "./pages/trip-details-page/trip-details-page";
+import { TripDetailsPage } from "./pages/trip/trip-details-page/trip-details-page";
 import NavigationErrorPage from "./pages/navigation-error-page/navigation-error-page";
 import "./index.css";
-import { CreateTripPage } from "./pages/create-trip-page/create-trip-page";
+import { CreateTripPage } from "./pages/trip/create-trip-page/create-trip-page";
 
 const router = createBrowserRouter([
   {

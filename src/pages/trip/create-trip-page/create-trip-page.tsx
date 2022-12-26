@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./create-trip-page.css";
-import { MiddleSizeButtonRedirect } from "../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
-import { createTripRequest } from "../../api/trips/trips-api";
+import { MiddleSizeButtonRedirect } from "../../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
+import { createTripRequest } from "../../../api/trips/trips-api";
 import { useNavigate } from "react-router-dom";
 
 export function CreateTripPage() {

@@ -1,10 +1,10 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { MiddleSizeButtonRedirect } from "../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
-import { Trip } from "../../model/trip";
+import { MiddleSizeButtonRedirect } from "../../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
+import { Trip } from "../../../model/trip";
 import "./trip-details-page.css";
-import "../../components/buttons/general-themes-buttons.css";
-import { deleteTripRequest, updateTripRequest } from "../../api/trips/trips-api";
+import "../../../components/buttons/general-themes-buttons.css";
+import { deleteTripRequest, updateTripRequest } from "../../../api/trips/trips-api";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;
