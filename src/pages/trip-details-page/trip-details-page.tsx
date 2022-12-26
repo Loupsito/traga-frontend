@@ -1,13 +1,14 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { MiddleSizeButtonRedirect } from "../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
 import { Trip } from "../../model/trip";
 import "./trip-details-page.css";
 import "../../components/buttons/general-themes-buttons.css";
-import { updateTrip } from "../../api/trips/trips-api";
+import { deleteTripRequest, updateTripRequest } from "../../api/trips/trips-api";
 
 export function TripDetailsPage() {
   const trip = useLoaderData() as Trip;
+  const navigate = useNavigate();
   const [name, setName] = useState(trip.name);
   const [creator, setCreator] = useState(trip.creator);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -19,16 +20,19 @@ export function TripDetailsPage() {
   };
 
   const saveTrip = async (): Promise<void> => {
-    try {
-      await updateTrip({
-        idTrip: trip.id,
-        name: name !== trip.name ? name : undefined,
-        creator: creator !== trip.creator ? creator : undefined,
-      });
-    } catch (e) {
-      console.error(e);
-    }
+    await updateTripRequest({
+      idTrip: trip.id,
+      name: name !== trip.name ? name : undefined,
+      creator: creator !== trip.creator ? creator : undefined,
+    });
   };
+
+  const deleteTrip = async (): Promise<void> => {
+    await deleteTripRequest(trip.id);
+    alert(`Trip deleted successfully!`);
+    navigate("/");
+  };
+
   const handleNameChange = (e: any) => {
     setName(e.currentTarget.textContent);
   };
@@ -75,7 +79,12 @@ export function TripDetailsPage() {
         <button className="button-middle-size" onClick={() => turnOffEditMode()}>
           {isEditMode ? "Save changes" : "Activate edit mode"}
         </button>
-        <button className="button-middle-size dangerousButtonAction">Delete trip</button>
+        <button
+          className="button-middle-size dangerousButtonAction"
+          onClick={() => deleteTrip()}
+        >
+          Delete trip
+        </button>
       </div>
     </div>
   );

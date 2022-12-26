@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./create-trip-page.css";
 import { MiddleSizeButtonRedirect } from "../../components/buttons/middle-size-button-redirect/middle-size-button-redirect";
-import { createTrip } from "../../api/trips/trips-api";
+import { createTripRequest } from "../../api/trips/trips-api";
 import { useNavigate } from "react-router-dom";
 
 export function CreateTripPage() {
@@ -19,7 +19,7 @@ export function CreateTripPage() {
     event.preventDefault();
 
     if (name && creator) {
-      await createTrip(name, creator);
+      await createTripRequest(name, creator);
       alert(`Trip created !`);
       navigate("/");
     } else {
@@ -59,6 +59,7 @@ export function CreateTripPage() {
               </li>
               <li>
                 <input
+                  className="button-middle-size"
                   type="submit"
                   id="submit"
                   value="Create the trip !"
