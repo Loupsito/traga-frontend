@@ -1,3 +1,10 @@
+# Traga frontend API
+
+## Prerequisites
+You must have the following installed :
+- `NodeJS`
+- `npm`
+
 ## How to run the project
 
 1. Download and install the dependencies :
