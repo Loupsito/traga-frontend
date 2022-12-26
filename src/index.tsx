@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AllTripsPage } from "./pages/trip/all-trips-page/all-trips-page";
 import { getOneTripRequest, getTripsRequest } from "./api/trips/trips-api";
 import { TripDetailsPage } from "./pages/trip/trip-details-page/trip-details-page";
-import NavigationErrorPage from "./pages/navigation-error-page/navigation-error-page";
+import NavigationErrorPage from "./pages/error/navigation-error-page/navigation-error-page";
 import "./index.css";
 import { CreateTripPage } from "./pages/trip/create-trip-page/create-trip-page";
 
