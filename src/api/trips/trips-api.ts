@@ -22,10 +22,10 @@ export const getTripsRequest = async () => {
   }
 };
 
-export const updateTripRequest = async (params: { idTrip?: number; name?: string; creator?: string }) => {
+export const updateTripRequest = async (params: { tripId?: number; name?: string; creator?: string }) => {
   try {
     const body = {
-      idTrip: params.idTrip,
+      tripId: params.tripId,
       name: params.name,
       creator: params.creator,
     };
@@ -45,9 +45,9 @@ export async function getOneTripRequest({ params }: any) {
   }
 }
 
-export const deleteTripRequest = async (idTrip: number) => {
+export const deleteTripRequest = async (tripId: number) => {
   try {
-    const res = await axios.delete(`http://localhost:8080/api/trips/${idTrip}`);
+    const res = await axios.delete(`http://localhost:8080/api/trips/${tripId}`);
     return res.data;
   } catch (error: any) {
     throwError(error);

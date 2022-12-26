@@ -21,7 +21,7 @@ export function TripDetailsPage() {
 
   const saveTrip = async (): Promise<void> => {
     await updateTripRequest({
-      idTrip: trip.id,
+      tripId: trip.id,
       name: name !== trip.name ? name : undefined,
       creator: creator !== trip.creator ? creator : undefined,
     });
